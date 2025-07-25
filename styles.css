@@ -507,7 +507,7 @@ html {
   overflow: hidden;
   /* Isolation creates new stacking context */
   isolation: isolate;
-  transition: transform 0.3s ease;
+  transition: transform 0.8s ease;
   will-change: transform; /* Only declare what will change */
 }
 
@@ -562,7 +562,7 @@ html {
     transparent 55%
   );
   transform: rotate(30deg);
-  animation: hologram 3s linear infinite;
+  animation: hologram 7s linear infinite;
 }
 
 @keyframes hologram {
