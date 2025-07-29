@@ -1,500 +1,505 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DEEPAK'S Portfolio</title>
-         <link rel="stylesheet" href="./styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Add right after <body> -->
-<canvas id="binary-header" style="position:fixed; top:0; left:0; z-index:-1;"></canvas>
-        
-        <!-- Animated Background -->
-        <div class="animated-bg">
-            <div class="floating-particles"></div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEEPAK'S Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Add right after <body> -->
+    <canvas id="binary-header" style="position:fixed; top:0; left:0; z-index:-1;"></canvas>
 
-        <!-- Navigation -->
-        <nav class="navbar" id="navbar">
-            <div class="nav-container">
-                <!-- Add to your navbar (replace existing theme toggle if any) -->
-<button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-  <span class="sun-icon"> </span>
-  <span class="moon-icon">  </span>
-</button>
-                <div class="nav-logo">
-                    <span class="logo-text"></span>
-                </div>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#Certificates" class="nav-link">Certificates</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-particles"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Add to your navbar (replace existing theme toggle if any) -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="sun-icon"> </span>
+                <span class="moon-icon"> </span>
+            </button>
+            <div class="nav-logo">
+                <span class="logo-text"></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#Resume" class="nav-link">Resume</a></li> <!-- This link targets the #Resume ID -->
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#Certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="name-highlight">Deepak</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Passionate web and app developer crafting digital experiences with cutting-edge technologies. 
+                    I turn complex problems into elegant solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
-            <div class="scroll-progress" id="scroll-progress"></div>
-        </nav>
-        <br>
-        <br>
-        <br>
-        
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="name-highlight">Deepak</span>
-                    </h1>
-                    <h2 class="hero-subtitle">
-                        <span class="typing-text" id="typing-text"></span>
-                        <span class="cursor">|</span>
-                    </h2>
-                    <p class="hero-description">
-                        Passionate web and app developer crafting digital experiences with cutting-edge technologies. 
-                        I turn complex problems into elegant solutions.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="code-window">
-                        <div class="window-header">
-                            <div class="window-controls">
-                                <span class="control red"></span>
-                                <span class="control yellow"></span>
-                                <span class="control green"></span>
-                            </div>
-                            <span class="window-title">portfolio.js</span>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
                         </div>
-                        <div class="window-content">
-                            <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+                        <span class="window-title">portfolio.js</span>
+                    </div>
+                    <div class="window-content">
+                        <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
     <span class="property">name</span>: <span class="string">'Deepak'</span>,
     <span class="property">passion</span>: <span class="string">'Innovating Web & Apps'</span>,
     <span class="property">skills</span>: [<span class="string">'Full-stack'</span>, <span class="string">'Flutter'</span>, <span class="string">'Java'</span>],
     <span class="property">status</span>: <span class="string">'Available for hire'</span>
     };</code></pre>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-<br>
-<br>
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Get to know me better</p>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="about-card">
-                            
-                            <p>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <p>
                             A full-stack web and mobile developer passionate about crafting seamless, user-centric digital experiences. 
                             With expertise in frontend frameworks (React, Flutter) and backend technologies, I build responsive websites and performant apps 
                             that blend clean design with intuitive functionality. My focus extends beyond code, I prioritize accessibility, performance optimization, 
                             and data-driven decisions to solve real problems. Whether architecting scalable systems or refining UI micro-interactions, I thrive on turning 
                             complex requirements into elegant solutions. Committed to lifelong learning, I stay at the forefront of emerging tech to deliver products that are both impactful and enjoyable to use.
-                            </p>
-                           <p>
-    Let's create something extraordinary together. I believe in technology that not only functions flawlessly but also tells a story and creates connections. 
-    Every line of code I write is driven by the desire to build digital experiences that are meaningful, memorable, and make people's lives just a little bit better.
-    I approach each project as a unique opportunity to blend technical precision with creative problem solving, ensuring solutions that are innovative as they are reliable. 
-    Through collaborative development and user focused design, I strive to build digital products that don't just meet expectations, but redefine them.
-</p>
-<div style="text-align: center;">
-    Let's code !!!
-</div>
-                            </p>
+                        </p>
+                        <p>
+                            Let's create something extraordinary together. I believe in technology that not only functions flawlessly but also tells a story and creates connections. 
+                            Every line of code I write is driven by the desire to build digital experiences that are meaningful, memorable, and make people's lives just a little bit better.
+                            I approach each project as a unique opportunity to blend technical precision with creative problem solving, ensuring solutions that are innovative as they are reliable. 
+                            Through collaborative development and user focused design, I strive to build digital products that don't just meet expectations, but redefine them.
+                        </p>
+                        <div style="text-align: center;">
+                            Let's code !!!
                         </div>
                     </div>
-                    <div class="about-image">
-                        <div class="image-container">
-                            
-                            <div class="image-overlay"></div>
-                        </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="image-overlay"></div>
                     </div>
                 </div>
             </div>
-        </section>
-<br>
-<br>
-<br>
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Skills & Technologies</h2>
-                    <p class="section-subtitle">Technologies I work with</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-name">React , HTML</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95"></div>
-                                </div>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Dart</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="90"></div>
-                                </div>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">CSS / Sass</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="92"></div>
-                                </div>
-                                <span class="skill-percentage">92%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Javascript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-name">Node.js</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="88"></div>
-                                </div>
-                                <span class="skill-percentage">88%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Firebase</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="85"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">MongoDB</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="82"></div>
-                                </div>
-                                <span class="skill-percentage">82%</span>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Springboot</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="80"></div>
-                                </div>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<br>
-<br>
-<br>
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle">Some of my recent work</p>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://cdn.dribbble.com/userupload/21748078/file/original-d54aa1db066bae383c740ae3991057f0.gif" alt="Expenses Measurer">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    <a href="https://expenses-measure.vercel.app/" class="project-link">Live Link</a>
-                                    <a href="https://github.com/Deepak11085/Expenses-measure" class="project-link">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Expenses Measurer</h3>
-                            <p class="project-description">
-                                A responsive personal finance web app that helps users track and analyze spending habits. 
-                                Built with React.js, Chart.js, and CSS3, it features expense categorization, interactive data visualization, and local storage persistence.
-                                The clean UI allows users to add, edit, or delete transactions while viewing spending patterns through dynamic charts. Deployed on Vercel,
-                                this project demonstrates strong skills in data handling, state management, and user-centric design. Future enhancements could include Firebase 
-                                integration for cloud sync and budget alerts.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">React</span>
-                                <span class="tag">Chart.js</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">MongoDB</span>
-                                <span class="tag">Vite</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://cdn.dribbble.com/userupload/41933286/file/original-1f70ebc2b118d071227e95c04aebda50.gif" alt="E-commerce Platform">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                    
-                                    <a href="https://github.com/Deepak11085/E-commerce" class="project-link">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">E-commerce Platform</h3>
-                            <p class="project-description">
-                               A complete e-commerce platform built with MERN stack focusing for electronic goods, built with modern web technologies. 
-                               The store offers smooth product browsing with category filters, a secure shopping cart, and easy checkout process. 
-                               Sellers can manage their inventory through a simple dashboard, while customers enjoy a clean shopping experience across phones, tablets, and computers. 
-                                The system handles user accounts, order tracking, and secure payments without complicated processes. Everything runs fast and stays organized behind the scenes.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Html</span>
-                                <span class="tag">css</span>
-                                <span class="tag">css</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">MongoDB</span>
-                               
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://miro.medium.com/v2/resize:fit:1400/1*HeoGqdd5k7m7sSl8UZBoWg.gif" alt="Task Management App">
-                            <div class="project-overlay">
-                                <div class="project-links">
-                                
-                                    <a href="https://github.com/Deepak11085/Company-Product-Analysis" class="project-link">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Company Product Analysis</h3>
-                            <p class="project-description">
-                                This data analytics project compares sales performance between beverage industry leaders using Kaggle datasets. 
-                                Advanced visualization techniques reveal key differences in regional market penetration, seasonal demand patterns, 
-                                and pricing strategies. The analysis demonstrates Coca-Cola's brand loyalty dominance against Pepsi's competitive pricing advantages in emerging markets. 
-                                Interactive dashboards present these insights through clean visual storytelling of complex sales data relationships.
-
-  
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">powerbi</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">R</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-<br>
-<br>
-<br>
-        <!-- Certificates Section -->
-  <section id="Certificates" class="Certificates">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Certificates</h2>
-                    <p class="section-subtitle">Courses I've completed</p>
-                </div>    
-  </div>
-</section>
-    
-    <div class="certificates-scroll-container">
-      <div class="certificates-scroll">
-      <!-- Card 1 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/Speaker logo.png" alt="Speaker" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Resource Speaker</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Event Talk</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EeRe7DJdnqJNsG21KRbopocBClpfWdsGGBGDwjpTQgCtxw?e=anh8Nb" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/Hackathon logo.jpg" alt="Hackathon" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Hackathon</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Intercollege Event</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EV1R1oaqsNhPmnVVPqMCnbUBJPqjkxm1NPa0VdnCq74nnw?e=8GSWvc" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/logo.jpg" alt="Hackwit" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Internship Hackwit Technologies</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Flutter</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EUczPW5yl89OoyBYOqu2YUEBcFY3wUHJZac19neFG51EpQ?e=C0WrGx" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/mongodb logo.webp" alt="MongoDB" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Introduction to MongoDB</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">MongoDB</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EYo0RM0o1w1MhOCLZl0wE24B8sONxqYOgGLY0quJn2ku0Q?e=j4hEIO" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/mongodb logo.webp" alt="MongoDB" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">MongoDB Transactions</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">MongoDB</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EVheaUxSpLdFhmN7OAPKb7wBbaYgfrWwaIV4K7CTZ6nOUQ?e=LpshYY" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/logo.jpg" alt="Hackwit" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Internship Hackwit Technologies</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">ARVR</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EeYEnoB8kfpJn7BBlr1TIIwBE6hT6fP6cuCrY2t6zTj7-Q?e=nm8Gze" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/nasscom-logo.jpg" alt="Nasscom" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Nasscom</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Digital 101 Journey</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EZpeDJ1bje5EnkTe61pWoIEBGW7n1_u08xZC-PEEAL8v8A?e=3rhwzB" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/matlab logo.jpg" alt="Matlab" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Matlab</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Object Oriented Programming</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EbECY3XU365LqrlTi_SFiOAB17TeojpwS_30Sur14Fuw2A?e=zzQqgk" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-
-      <!-- Card 9 -->
-      <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
-        <img src="data/matlab logo.jpg" alt="Matlab" style="width: 48px; height: 48px;">
-        <div style="display: flex; flex-direction: column; flex: 1;">
-          <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Matlab</h3>
-          <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Statistics Onramp</p>
-          <a href="https://1drv.ms/i/c/5057506a26e7c18b/EdKtLh8_NwdCvkftJs6mOO8B7Y3b13_xUXypfFypVSDZsg?e=FyMFUI" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
-        </div>
-      </div>
-     </div>
-    </div>
-  </div>
-</section>
     </section>
-<br>
-<br>
-<br>
-<br>
-<br>
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="section-subtitle">Ready to start your next project?</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3>Email</h3> 
-                                 <p><a href="mailto:deepakkrishna6523@gmail.com" style="color: white; text-decoration: none;">deepakkrishna6523@gmail.com</a></p>
+    <br>
+    <br>
+    <br>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">React , HTML</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
                             </div>
+                            <span class="skill-percentage">95%</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📱</div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <p><a href="tel:+919342207523" style="color: white; text-decoration: none;">+91 9342207523</a></p>
+                        <div class="skill-item">
+                            <span class="skill-name">Dart</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
                             </div>
+                            <span class="skill-percentage">90%</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-details">
-                                <h3>Location</h3>
-                                <p>Chennai , Tamilnadu</p>
+                        <div class="skill-item">
+                            <span class="skill-name">CSS / Sass</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92"></div>
                             </div>
+                            <span class="skill-percentage">92%</span>
                         </div>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/deepakky/" class="social-link">LinkedIn</a>
-                            <a href="https://github.com/Deepak11085" class="social-link">GitHub</a>
-                            <a href="https://www.instagram.com/_deepak_.krish/" class="social-link">Instagram</a>
+                        <div class="skill-item">
+                            <span class="skill-name">Javascript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
                         </div>
                     </div>
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="" required>
-                            <label for="name">Name</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="" required>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="" required>
-                            <label for="subject">Subject</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
-                            <label for="message">Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
                 </div>
-            </div>  
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <p>&copy; Deepak. All rights reserved.</p>
-                    <p>Crafted with ❤ and lots of ☕</p>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="82"></div>
+                            </div>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Springboot</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <script type="module" src="./main.js"></script>
-    </body>
-    </html>
+    <!-- NEW SKILLS CALL-TO-ACTION BOX - NOW WITH ID="Resume" -->
+    <div class="skills-call-to-action-card" id="Resume"> 
+        <div class="card-content">
+            <h3>Wanna see my Resume ??</h3>
+            <p>Here view this 👇👇</p>
+            <!-- Added target="_blank" to open in a new tab -->
+            <a href="https://1drv.ms/b/c/5057506a26e7c18b/EYCCe20pzFtMnzrhzOy-s1kBTMcSIOVUWORl_S9p9RguNw?e=dcMfHX" target="_blank" class="btn btn-primary">Resume</a>
+        </div>
+    </div>
+    <!-- END NEW SKILLS CALL-TO-ACTION BOX -->
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://cdn.dribbble.com/userupload/21748078/file/original-d54aa1db066bae383c740ae3991057f0.gif" alt="Expenses Measurer">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://expenses-measure.vercel.app/" class="project-link">Live Link</a>
+                                <a href="https://github.com/Deepak11085/Expenses-measure" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Expenses Measurer</h3>
+                        <p class="project-description">
+                            A responsive personal finance web app that helps users track and analyze spending habits. 
+                            Built with React.js, Chart.js, and CSS3, it features expense categorization, interactive data visualization, and local storage persistence.
+                            The clean UI allows users to add, edit, or delete transactions while viewing spending patterns through dynamic charts. Deployed on Vercel,
+                            this project demonstrates strong skills in data handling, state management, and user-centric design. Future enhancements could include Firebase 
+                            integration for cloud sync and budget alerts.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Chart.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Vite</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://cdn.dribbble.com/userupload/41933286/file/original-1f70ebc2b118d071227e95c04aebda50.gif" alt="E-commerce Platform">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Deepak11085/E-commerce" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">
+                            A complete e-commerce platform built with MERN stack focusing for electronic goods, built with modern web technologies. 
+                            The store offers smooth product browsing with category filters, a secure shopping cart, and easy checkout process. 
+                            Sellers can manage their inventory through a simple dashboard, while customers enjoy a clean shopping experience across phones, tablets, and computers. 
+                            The system handles user accounts, order tracking, and secure payments without complicated processes. Everything runs fast and stays organized behind the scenes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Html</span>
+                            <span class="tag">css</span>
+                            <span class="tag">css</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*HeoGqdd5k7m7sSl8UZBoWg.gif" alt="Task Management App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Deepak11085/Company-Product-Analysis" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Company Product Analysis</h3>
+                        <p class="project-description">
+                            This data analytics project compares sales performance between beverage industry leaders using Kaggle datasets. 
+                            Advanced visualization techniques reveal key differences in regional market penetration, seasonal demand patterns, 
+                            and pricing strategies. The analysis demonstrates Coca-Cola's brand loyalty dominance against Pepsi's competitive pricing advantages in emerging markets. 
+                            Interactive dashboards present these insights through clean visual storytelling of complex sales data relationships.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">powerbi</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- Certificates Section -->
+    <section id="Certificates" class="Certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificates</h2>
+                <p class="section-subtitle">Courses I've completed</p>
+            </div> 
+        </div>
+    </section>
+
+    <div class="certificates-scroll-container">
+        <div class="certificates-scroll">
+            <!-- Card 1 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/Speaker logo.png" alt="Speaker" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Resource Speaker</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Event Talk</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EeRe7DJdnqJNsG21KRbopocBClpfWdsGGBGDwjpTQgCtxw?e=anh8Nb" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/Hackathon logo.jpg" alt="Hackathon" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Hackathon</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Intercollege Event</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EV1R1oaqsNhPmnVVPqMCnbUBJPqjkxm1NPa0VdnCq74nnw?e=8GSWvc" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/logo.jpg" alt="Hackwit" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Internship Hackwit Technologies</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Flutter</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EUczPW5yl89OoyBYOqu2YUEBcFY3wUHJZac19neFG51EpQ?e=C0WrGx" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/mongodb logo.webp" alt="MongoDB" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Introduction to MongoDB</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">MongoDB</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EYo0RM0o1w1MhOCLZl0wE24B8sONxqYOgGLY0quJn2ku0Q?e=j4hEIO" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/mongodb logo.webp" alt="MongoDB" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">MongoDB Transactions</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">MongoDB</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EVheaUxSpLdFhmN7OAPKb7wBbaYgfrWwaIV4K7CTZ6nOUQ?e=LpshYY" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/logo.jpg" alt="Hackwit" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Internship Hackwit Technologies</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">ARVR</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EeYEnoB8kfpJn7BBlr1TIIwBE6hT6fP6cuCrY2t6zTj7-Q?e=nm8Gze" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/nasscom-logo.jpg" alt="Nasscom" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Nasscom</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Digital 101 Journey</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EZpeDJ1bje5EnkTe61pWoIEBGW7n1_u08xZC-PEEAL8v8A?e=3rhwzB" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/matlab logo.jpg" alt="Matlab" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Matlab</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Object Oriented Programming</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EbECY3XU365LqrlTi_SFiOAB17TeojpwS_30Sur14Fuw2A?e=zzQqgk" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div style="flex: 0 0 auto; scroll-snap-align: start; background-color: #1e293b; border-radius: 12px; padding: 20px; min-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; gap: 15px; align-items: center;">
+                <img src="data/matlab logo.jpg" alt="Matlab" style="width: 48px; height: 48px;">
+                <div style="display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 600;">Matlab</h3>
+                    <p style="margin: 4px 0; color: #cbd5e1; font-size: 0.9rem; text-align: left;">Statistics Onramp</p>
+                    <a href="https://1drv.ms/i/c/5057506a26e7c18b/EdKtLh8_NwdCvkftJs6mOO8B7Y3b13_xUXypfFypVSDZsg?e=FyMFUI" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem;">View Certificate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to start your next project?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3> 
+                            <p><a href="mailto:deepakkrishna6523@gmail.com" style="color: white; text-decoration: none;">deepakkrishna6523@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919342207523" style="color: white; text-decoration: none;">+91 9342207523</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Chennai , Tamilnadu</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/deepakky/" class="social-link">LinkedIn</a>
+                        <a href="https://github.com/Deepak11085" class="social-link">GitHub</a>
+                        <a href="https://www.instagram.com/_deepak_.krish/" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; Deepak. All rights reserved.</p>
+                <p>Crafted with ❤ and lots of ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

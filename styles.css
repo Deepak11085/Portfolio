@@ -489,6 +489,73 @@ html {
     font-size: 0.85rem;
 }
 
+/* Add this to your existing styles.css file */
+
+.skills-call-to-action-card {
+    /* Mimic contact-item styling */
+    background-color: #1e293b; /* Dark background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px; /* More padding for a larger card */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    border: 1px solid #334155; /* Subtle border */
+    color: #f8fafc; /* Light text color */
+
+    /* Centering the box itself */
+    width: 90%; /* Responsive width */
+    max-width: 700px; /* Max width for larger screens */
+    margin: 80px auto; /* Key for horizontal centering with ample vertical space */
+
+    /* Centering content inside the box */
+    display: flex;
+    flex-direction: column; /* Stack icon, heading, paragraph, and button vertically */
+    align-items: center; /* Center items horizontally within the flex container */
+    text-align: center; /* Ensure text is centered */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.skills-call-to-action-card:hover {
+    transform: translateY(-8px); /* Lift more on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+}
+
+.skills-call-to-action-card .card-icon {
+    font-size: 3rem; /* Larger icon */
+    margin-bottom: 20px;
+    color: #67e8f9; /* Matching your highlight color */
+}
+
+.skills-call-to-action-card h3 {
+    font-size: 2rem; /* Larger heading */
+    margin-bottom: 15px;
+    color: #67e8f9;
+}
+
+.skills-call-to-action-card p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    max-width: 500px; /* Constrain paragraph width for readability */
+}
+
+/* Ensure the button inside this new card uses your existing button styles */
+.skills-call-to-action-card .btn-primary {
+    /* You might already have these, but ensuring they apply */
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add any specific button styling if needed for this context, e.g., slightly larger */
+.skills-call-to-action-card .btn-primary {
+    font-size: 1.1rem;
+}
+
+
+
 /* ===== MOBILE PROJECTS SECTION ===== */
 .projects {
     background: rgba(26, 31, 54, 0.3);
@@ -507,7 +574,7 @@ html {
   overflow: hidden;
   /* Isolation creates new stacking context */
   isolation: isolate;
-  transition: transform 0.8s ease;
+  transition: transform 0.3s ease;
   will-change: transform; /* Only declare what will change */
 }
 
@@ -521,12 +588,12 @@ html {
   bottom: -2px;
   z-index: -1;
   background: linear-gradient(45deg, 
-    #31b9be, 
+    #25c1c6, 
     #030303, 
-    #b1e8eb,
+    #050606,
     #31b9be);
   background-size: 300% 300%;
-  animation: borderPulse 12s linear infinite;
+  animation: borderPulse 5s linear infinite;
   /* Performance optimizations: */
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -544,7 +611,7 @@ html {
 }
 
 .project-card:hover::before {
-  animation-duration: 6s;
+  animation-duration: 30s;
   filter: blur(6px);
 }
 
@@ -562,7 +629,7 @@ html {
     transparent 55%
   );
   transform: rotate(30deg);
-  animation: hologram 7s linear infinite;
+  animation: hologram 3s linear infinite;
 }
 
 @keyframes hologram {
@@ -585,7 +652,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.9s ease;
 }
 
 .project-overlay {
@@ -599,7 +666,7 @@ html {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.9s ease;
 }
 
 .project-card:hover .project-overlay {
@@ -624,7 +691,7 @@ html {
     border-radius: 20px;
     font-weight: 500;
     font-size: 0.85rem;
-    transition: all 0.3s ease;
+    transition: all 0.9s ease;
     min-height: 44px;
     min-width: 44px;
     display: flex;
