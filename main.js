@@ -1,51 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements Cache
-    // Add before DOMContentLoaded
 class BinaryRain {
-  constructor(selector) {
-    this.canvas = document.querySelector(selector);
-    this.ctx = this.canvas.getContext('2d');
-    this.columns = [];
-    this.fontSize = 12;
-    this.init();
-  }
-  
-  init() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = 200;
-    const columnCount = Math.floor(this.canvas.width/this.fontSize);
-    
-    for(let i = 0; i < columnCount; i++) {
-      this.columns[i] = Math.random() * -1000;
+    constructor() {
+        this.canvas = document.getElementById('binaryRain');
+        this.ctx = this.canvas.getContext('2d');
+
+        this.fontSize = 16;
+        this.columns = [];
+
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+
+        this.animate();
     }
-    
-    this.animate();
-  }
-  
-  animate() {
-    this.ctx.fillStyle = 'rgba(0, 20, 30, 0.05)';
-    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    this.ctx.fillStyle = '#00f3ff';
-    this.ctx.font = `${this.fontSize}px monospace`;
-    
-    this.columns.forEach((yPos, index) => {
-      const text = Math.random() > 0.5 ? '1' : '0';
-      const x = index * this.fontSize;
-      this.ctx.fillText(text, x, yPos);
-      
-      if(yPos > this.canvas.height && Math.random() > 0.975) {
-        this.columns[index] = 0;
-      } else {
-        this.columns[index] += this.fontSize;
-      }
-    });
-    
-    requestAnimationFrame(() => this.animate());
-  }
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+
+        const columnsCount = Math.floor(this.canvas.width / this.fontSize);
+        this.columns = Array(columnsCount).fill(0);
+    }
+
+    animate() {
+        // Fade effect for trailing
+        this.ctx.fillStyle = 'rgba(0, 20, 30, 0.15)';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        // Binary digit color
+        this.ctx.fillStyle = '#00f3ff';
+        this.ctx.font = `${this.fontSize}px monospace`;
+        this.ctx.textBaseline = 'top';
+
+        this.columns.forEach((yPos, index) => {
+            const text = Math.random() > 0.5 ? '1' : '0';
+            const x = index * this.fontSize;
+            this.ctx.fillText(text, x, yPos);
+
+            if (yPos > this.canvas.height && Math.random() > 0.975) {
+                this.columns[index] = 0;
+            } else {
+                // Slower falling effect
+                this.columns[index] += this.fontSize * 0.3;
+            }
+        });
+
+        requestAnimationFrame(() => this.animate());
+    }
 }
 
-new BinaryRain('#binary-header');
+document.addEventListener('DOMContentLoaded', () => {
+    new BinaryRain();
+});
 
 
 
@@ -192,14 +196,16 @@ themeToggle.addEventListener('click', () => {
                     entry.target.classList.add('animate');
                     
                     if (entry.target.classList.contains('skill-item')) {
-                        const progressBar = entry.target.querySelector('.skill-progress');
-                        const targetWidth = progressBar.dataset.width;
-                        progressBar.style.width = `${targetWidth}%`;
-                    }
+    const progressBar = entry.target.querySelector('.skill-progress');
+    const percentageText = entry.target.querySelector('.skill-percentage');
+    const targetWidth = progressBar.dataset.width;
 
-                    if (entry.target.classList.contains('stat-number')) {
-                        animateCounter(entry.target);
-                    }
+    // Animate bar
+    progressBar.style.width = `${targetWidth}%`;
+
+    // Automatically set percentage text
+    percentageText.textContent = `${targetWidth}%`;
+}
                 }
             });
         }, observerOptions);
@@ -416,4 +422,3 @@ themeToggle.addEventListener('click', () => {
 new NeonParticles();
 
     init();
-});
